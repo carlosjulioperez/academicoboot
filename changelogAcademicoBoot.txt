@@ -1,0 +1,11 @@
+Fuentes
+	* Spring Boot:
+		https://spring.io/guides/gs/accessing-data-rest/
+		https://hellokoding.com/restful-api-example-with-spring-boot-spring-data-rest-spring-data-jpa-many-to-many-extra-columns-relationship-and-mysql/
+
+Parámetros JSON
+	* Importar desde Postman:
+		https://stackoverflow.com/questions/27957943/simulate-a-specific-curl-in-postman
+
+	* Materia:
+		curl -i -X POST -H "Content-Type:application/json" -d "{\"descripcion\" : \"Materia 1\"}" http://localhost:8080/materias
