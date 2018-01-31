@@ -53,3 +53,10 @@ INSERT INTO profesor (id,apellido,nombre,nivel_academico_id) VALUES
 
 INSERT INTO calendario_espol (id,anio,semestre,fecha_inicio_vigencia,fecha_final_vigencia) VALUES 
 (1, 2018, 1, TIMESTAMP '2018-01-30 00:00:00', TIMESTAMP '2018-07-30 00:00:00');
+
+INSERT INTO paralelo(id, calendario_espol_id, materia_id, profesor_id, hora_inicio, duracion_horas) VALUES
+(1, 1, 6, 7, '07:00', 2); 
+
+INSERT INTO registro(id, alumno_id, paralelo_id, fecha_registro, estado_registro) VALUES
+(1, 1, 1, TIMESTAMP '2018-01-30 00:00:00', true); 
+

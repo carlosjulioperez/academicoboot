@@ -14,22 +14,28 @@ import lombok.Data;
 @Data
 @Entity
 /**
- * Profesor Entity
+ * Paralelo Entity
  * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
  * 2018-ene-31
  */
-public class Profesor{
+public class Paralelo{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-    @Column(length=100)
-    private String apellido;
+    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "paralelo_calendario_espol_fkey"))
+    private CalendarioEspol calendarioEspol;
+    
+    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "paralelo_materia_fkey"))
+    private Materia materia;
+    
+    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "paralelo_profesor_fkey"))
+    private Profesor profesor;
+	
+    @Column(length=5)
+    private String horaInicio;
 
-    @Column(length=100)
-    private String nombre;
-
-    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "profesor_nivel_academico_fkey"))
-    private NivelAcademico nivelAcademico;
+	@Column(length=2)
+    private Integer duracionHoras;
 
 }

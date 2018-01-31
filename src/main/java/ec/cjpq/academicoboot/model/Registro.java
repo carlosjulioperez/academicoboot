@@ -9,27 +9,30 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
 @Entity
 /**
- * Profesor Entity
+ * Registro Entity
  * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
  * 2018-ene-31
  */
-public class Profesor{
+public class Registro{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-    @Column(length=100)
-    private String apellido;
+    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "registro_alumno_fkey"))
+    private Alumno alumno;
+    
+    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "registro_paralelo_fkey"))
+    private Paralelo paralelo;
+    
+    private Date fechaRegistro;
 
-    @Column(length=100)
-    private String nombre;
-
-    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "profesor_nivel_academico_fkey"))
-    private NivelAcademico nivelAcademico;
+    private Boolean estadoRegistro;
 
 }
