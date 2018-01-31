@@ -3,6 +3,10 @@ Fuentes
 		https://spring.io/guides/gs/accessing-data-rest/
 		https://hellokoding.com/restful-api-example-with-spring-boot-spring-data-rest-spring-data-jpa-many-to-many-extra-columns-relationship-and-mysql/
 
+Maven
+	* Ejecutar servidor:
+		mvn clean spring-boot:run
+
 Parámetros JSON
 	* Importar desde Postman:
 		https://stackoverflow.com/questions/27957943/simulate-a-specific-curl-in-postman

@@ -11,11 +11,11 @@ import lombok.Data;
 @Data
 @Entity
 /**
- * Materia Entity
+ * Actividad Entity
  * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
  * 2018-ene-31
  */
-public class Materia{
+public class Actividad{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
