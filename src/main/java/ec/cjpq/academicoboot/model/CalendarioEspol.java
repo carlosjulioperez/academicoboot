@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import java.util.Date;
+import java.util.Set;
 
 import lombok.Data;
 
@@ -19,8 +21,11 @@ import lombok.Data;
  */
 public class CalendarioEspol{
 
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+
+    @OneToMany(mappedBy = "calendarioEspol")
+    private Set<Paralelo>paralelos;
 	
 	@Column(length=4)
     private Integer anio;

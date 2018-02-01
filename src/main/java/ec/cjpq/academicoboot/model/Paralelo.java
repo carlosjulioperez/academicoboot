@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -20,16 +21,20 @@ import lombok.Data;
  */
 public class Paralelo{
 
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
+	private long id;
 	
-    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "paralelo_calendario_espol_fkey"))
+    //@NotNull
+    @ManyToOne @JoinColumn(name="calendario_espol_id", foreignKey = @ForeignKey(name = "paralelo_calendario_espol_fkey"))
     private CalendarioEspol calendarioEspol;
     
-    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "paralelo_materia_fkey"))
+    //@NotNull
+    @ManyToOne @JoinColumn(name="materia_id", foreignKey = @ForeignKey(name = "paralelo_materia_fkey"))
     private Materia materia;
     
-    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "paralelo_profesor_fkey"))
+    //@NotNull
+    @ManyToOne @JoinColumn(name="profesor_id", foreignKey = @ForeignKey(name = "paralelo_profesor_fkey"))
     private Profesor profesor;
 	
     @Column(length=5)

@@ -17,8 +17,8 @@ import lombok.Data;
  */
 public class NivelAcademico{
 
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	
     @Column(length=100)
     private String descripcion;

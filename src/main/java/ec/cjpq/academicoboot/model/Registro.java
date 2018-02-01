@@ -22,8 +22,8 @@ import lombok.Data;
  */
 public class Registro{
 
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	
     @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "registro_alumno_fkey"))
     private Alumno alumno;
