@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.OneToMany;
+//import javax.persistence.SequenceGenerator;
+
+import java.util.List;
 
 import lombok.Data;
 
@@ -25,6 +28,9 @@ public class Materia{
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Id
    private long id;
+
+   @OneToMany(mappedBy = "materia")
+   private List<Paralelo>paralelos;
 
    @Column(length=100)
    private String descripcion;

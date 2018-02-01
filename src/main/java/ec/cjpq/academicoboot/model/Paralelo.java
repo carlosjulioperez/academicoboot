@@ -22,19 +22,21 @@ import lombok.Data;
 public class Paralelo{
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    //@Column(columnDefinition = "serial")
 	private long id;
 	
     //@NotNull
-    @ManyToOne @JoinColumn(name="calendario_espol_id", foreignKey = @ForeignKey(name = "paralelo_calendario_espol_fkey"))
+    @ManyToOne 
+    @JoinColumn(name="calendario_espol_id", foreignKey = @ForeignKey(name = "paralelo_calendario_espol_fkey"))
     private CalendarioEspol calendarioEspol;
     
     //@NotNull
-    @ManyToOne @JoinColumn(name="materia_id", foreignKey = @ForeignKey(name = "paralelo_materia_fkey"))
+    @ManyToOne 
+    @JoinColumn(name="materia_id", foreignKey = @ForeignKey(name = "paralelo_materia_fkey"))
     private Materia materia;
     
     //@NotNull
-    @ManyToOne @JoinColumn(name="profesor_id", foreignKey = @ForeignKey(name = "paralelo_profesor_fkey"))
+    @ManyToOne 
+    @JoinColumn(name="profesor_id", foreignKey = @ForeignKey(name = "paralelo_profesor_fkey"))
     private Profesor profesor;
 	
     @Column(length=5)

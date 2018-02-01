@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 import lombok.Data;
 
@@ -24,8 +24,8 @@ public class CalendarioEspol{
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
-    //@OneToMany(mappedBy = "calendarioEspol")
-    //private Set<Paralelo>paralelos;
+    @OneToMany(mappedBy = "calendarioEspol")
+    private List<Paralelo>paralelos;
 	
 	@Column(length=4)
     private Integer anio;

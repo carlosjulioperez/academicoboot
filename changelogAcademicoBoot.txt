@@ -37,12 +37,22 @@ Parámetros JSON
 		curl -i -X POST -H "Content-Type:application/json" -d "{\"descripcion\" : \"Aplicaciones distribuidas\"}" http://localhost:8080/materias
 
 	* NivelAcademico:
-		curl -i -X POST -H "Content-Type:application/json" -d "{\"descripcion\" : \"Tercer Nivel\"}" http://localhost:8080/nivelAcademicoes
+		curl -i -X POST -H "Content-Type:application/json" -d "{\"descripcion\" : \"Quinto Nivel\"}" http://localhost:8080/nivelAcademicoes
 
 	* Profesor:
+		+ Nuevo:
 		curl -i -X PUT -H "Content-Type:text/uri-list" -d "{ \"apellido\" : \"Suárez\", \"nombre\" : \"Patricia\", \"nivelAcademicoes\" : \"http://localhost:8080/nivelAcademicoes/1\" }" http://localhost:8080/profesors 
+
+		+ Profesor (Asignar el nivelAcademico 4 al profesor 11):
+		curl -i -X PUT -H "Content-Type:text/uri-list" -d "http://localhost:8080/nivelAcademicoes/4" http://localhost:8080/profesors/11/nivelAcademico
 
 	* Paralelo:
 		+ CREATE:
+			curl -i -X POST -H "Content-Type:application/json" -d "{ \"calendarioEspol\" : \"http://localhost:8080/calendarioEspols/1\", \"materia\" : \"http://localhost:8080/materias/1\", \"profesor\" : \"http://localhost:8080/profesors/1\", \"horaInicio\" : \"09:30\", \"duracionHoras\" : \"2\"}" http://localhost:8080/paraleloes 
 
-		curl -i -X POST -H "Content-Type:application/json" -d "{ \"calendarioEspols\" : \"http://localhost:8080/calendarioEspols/1\", \"materias\" : \"http://localhost:8080/materias/1\", \"profesors\" : \"http://localhost:8080/profesors/1\", \"horaInicio\" : \"09:30\", \"duracionHoras\" : \"2\"}" http://localhost:8080/paraleloes 
+		+ READ:
+			curl -i -X GET http://localhost:8080/paraleloes/1
+
+		+ UPDATE:
+			curl -i -X PUT -H "Content-Type:application/json" -d "{ \"id\" : \"1\", \"horaInicio\" : \"11:30\", \"duracionHoras\" : \"4\"}" http://localhost:8080/paraleloes
+
