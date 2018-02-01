@@ -9,6 +9,8 @@ Fuentes
 		
 		+ Plan B:
 		https://memorynotfound.com/spring-boot-spring-data-jpa-hibernate-h2-web-console/
+
+		http://www.baeldung.com/spring-data-rest-relationships
 Maven
 	* Ejecutar servidor:
 		mvn clean spring-boot:run
@@ -38,12 +40,7 @@ Parámetros JSON
 		curl -i -X POST -H "Content-Type:application/json" -d "{\"descripcion\" : \"Tercer Nivel\"}" http://localhost:8080/nivelAcademicoes
 
 	* Profesor:
-		curl -i -X POST -H "Content-Type:application/json" -d 
-		"{
-		\"apellido\" : \"Suárez\",
-		\"nombre\" : \"Patricia\",
-		\"nivelAcademicoes\" : \"http://localhost:8080/nivelAcademicoes/1\"
-		}" http://localhost:8080/profesors
+		curl -i -X PUT -H "Content-Type:text/uri-list" -d "{ \"apellido\" : \"Suárez\", \"nombre\" : \"Patricia\", \"nivelAcademicoes\" : \"http://localhost:8080/nivelAcademicoes/1\" }" http://localhost:8080/profesors 
 
 	* Paralelo:
 		+ CREATE:

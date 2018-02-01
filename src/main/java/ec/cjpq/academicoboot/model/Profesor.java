@@ -29,7 +29,8 @@ public class Profesor{
     @Column(length=100)
     private String nombre;
 
-    @ManyToOne @JoinColumn(foreignKey = @ForeignKey(name = "profesor_nivel_academico_fkey"))
+    @ManyToOne 
+    @JoinColumn(name="nivel_academico_id", foreignKey = @ForeignKey(name = "profesor_nivel_academico_fkey"))
     private NivelAcademico nivelAcademico;
 
 }

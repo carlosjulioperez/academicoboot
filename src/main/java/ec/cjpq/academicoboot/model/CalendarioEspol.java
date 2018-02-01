@@ -24,8 +24,8 @@ public class CalendarioEspol{
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
-    @OneToMany(mappedBy = "calendarioEspol")
-    private Set<Paralelo>paralelos;
+    //@OneToMany(mappedBy = "calendarioEspol")
+    //private Set<Paralelo>paralelos;
 	
 	@Column(length=4)
     private Integer anio;

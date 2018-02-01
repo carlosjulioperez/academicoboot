@@ -22,7 +22,7 @@ import lombok.Data;
 public class Paralelo{
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
+    //@Column(columnDefinition = "serial")
 	private long id;
 	
     //@NotNull
