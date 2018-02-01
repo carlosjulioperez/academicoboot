@@ -48,11 +48,28 @@ Parámetros JSON
 
 	* Paralelo:
 		+ CREATE:
-			curl -i -X POST -H "Content-Type:application/json" -d "{ \"calendarioEspol\" : \"http://localhost:8080/calendarioEspols/1\", \"materia\" : \"http://localhost:8080/materias/1\", \"profesor\" : \"http://localhost:8080/profesors/1\", \"horaInicio\" : \"09:30\", \"duracionHoras\" : \"2\"}" http://localhost:8080/paraleloes 
+			curl -i -X POST -H "Content-Type:application/json" -d '{ "calendarioEspol":"http://localhost:8080/calendarioEspols/1", "materia":"http://localhost:8080/materias/1", "profesor":"http://localhost:8080/profesors/1", "horaInicio":"09:30", "duracionHoras":"2"}' http://localhost:8080/paraleloes 
 
 		+ READ:
 			curl -i -X GET http://localhost:8080/paraleloes/1
 
 		+ UPDATE:
-			curl -i -X PUT -H "Content-Type:application/json" -d "{ \"id\" : \"1\", \"horaInicio\" : \"11:30\", \"duracionHoras\" : \"4\"}" http://localhost:8080/paraleloes
+			curl -i -X PUT -H "Content-Type:application/json" -d '{ "horaInicio":"11:30", "duracionHoras":"4" }' http://localhost:8080/paraleloes/1
+
+		+ DELETE:
+			curl -i -X DELETE http://localhost:8080/paraleloes/1
+
+	* Registro:
+
+		+ CREATE:
+			curl -i -X POST -H "Content-Type:application/json" -d '{ "alumno":"http://localhost:8080/alumnoes/1", "paralelo":"http://localhost:8080/paraleloes/1", "fechaRegistro":"2018-01-31", "estadoRegistro":"true" }' http://localhost:8080/registroes
+
+		+ READ:
+			curl -i -X GET http://localhost:8080/registroes/1
+
+		+ UPDATE:
+			curl -i -X PUT -H "Content-Type:application/json" -d '{ "fechaRegistro":"2018-02-01", "estadoRegistro":"false" }' http://localhost:8080/registroes/1
+		
+		+ DELETE:
+			curl -i -X DELETE http://localhost:8080/registroes/1
 
